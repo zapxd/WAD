@@ -1,0 +1,11 @@
+open terminal
+
+-> npm install express cors body-parser
+
+then get the code from the github
+
+-> node server.js
+
+open the link in the browser
+
+the login email and password is hardcoded in html file
