@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="login-form bg-white">
+    <h2 class="text-center mb-4">Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="email"
+          required
+          #emailInput="ngModel"
+        />
+        <div class="error" *ngIf="emailInput.invalid && emailInput.touched">
+          Invalid email
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="password"
+          required
+          #passInput="ngModel"
+        />
+        <div class="error" *ngIf="passInput.invalid && passInput.touched">
+          Password required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+    </form>
+
+    <div *ngIf="successMsg" class="alert alert-success mt-3">
+      {{ successMsg }}
+    </div>
+    <div *ngIf="errorMsg" class="alert alert-danger mt-3">
+      {{ errorMsg }}
+    </div>
+
+    <div *ngIf="loggedInUser" class="user-data d-block mt-4">
+      <h4>Logged In User Information:</h4>
+      <p><strong>Name:</strong> {{ loggedInUser.name }}</p>
+      <p><strong>Email:</strong> {{ loggedInUser.email }}</p>
+      <p><strong>Password:</strong> {{ loggedInUser.password }}</p>
+    </div>
+  </div>
+</div>
