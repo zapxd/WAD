@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .login-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+    .user-data {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-form bg-white">
+      <h2 class="text-center mb-4">Login</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+          <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required />
+          <div class="error" id="passError"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+      </form>
+
+      <div id="errorMsg" class="alert alert-danger mt-3 d-none"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Reset error message
+      document.getElementById('errorMsg').classList.add('d-none');
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      let valid = true;
+
+      // Simple validation
+      if (!email || !password) {
+        document.getElementById('errorMsg').textContent = 'Email and password are required';
+        document.getElementById('errorMsg').classList.remove('d-none');
+        valid = false;
+      }
+
+      if (valid) {
+        // Send POST request to server
+        fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message === 'Login successful') {
+            alert('Login successful');
+            form.reset(); // Reset form
+          } else {
+            document.getElementById('errorMsg').textContent = data.message;
+            document.getElementById('errorMsg').classList.remove('d-none');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('errorMsg').textContent = 'An error occurred. Please try again.';
+          document.getElementById('errorMsg').classList.remove('d-none');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
