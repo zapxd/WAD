@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page - jQuery Mobile</title>
+
+  <!-- Include jQuery and jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.2/jquery.mobile-1.5.2.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.5.2/jquery.mobile-1.5.2.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .page-header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .ui-btn {
+      margin-top: 20px;
+    }
+
+    .info-box {
+      background-color: #f4f4f4;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .info-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div data-role="page" id="home">
+    <div data-role="header" class="page-header">
+      <h1>Welcome</h1>
+    </div>
+
+    <div role="main" class="ui-content content">
+      <h2>Welcome to My jQuery Mobile Page</h2>
+      <p>This is a simple example of a mobile-friendly page created using jQuery Mobile. The page demonstrates basic navigation and structure.</p>
+
+      <div class="info-box">
+        <h3>Key Features:</h3>
+        <ul>
+          <li>Responsive Design</li>
+          <li>Touch Optimized</li>
+          <li>Simple and Fast Navigation</li>
+        </ul>
+        <p>Click the button below to learn more about this page.</p>
+      </div>
+
+      <!-- Link to About Page -->
+      <a href="about.html" class="ui-btn ui-btn-b">Go to About Page</a>
+    </div>
+  </div>
+
+</body>
+</html>
