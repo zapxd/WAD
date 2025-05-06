@@ -1,0 +1,10 @@
+open terminal
+
+-> npm install express
+
+then get the code from the github
+
+-> node server.js
+
+open the link in the browser
+
