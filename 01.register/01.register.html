@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .reg-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="reg-form bg-white">
+      <h2 class="text-center mb-4">Sign Up</h2>
+      <form id="regForm">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required>
+          <div class="error" id="nameError"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+          <div class="error" id="passError"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Register</button>
+      </form>
+      <div id="successMsg" class="alert alert-success mt-3 d-none"></div>
+    </div>
+  </div>
+
+  <script>
+    // Temporary in-memory array (will be cleared on refresh)
+    const users = [];
+
+    const form = document.getElementById('regForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Clear previous errors
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      let valid = true;
+
+      // Validation
+      if (name.length < 3) {
+        document.getElementById('nameError').textContent = 'Name too short';
+        valid = false;
+      }
+
+      if (!email.includes('@') || !email.includes('.')) {
+        document.getElementById('emailError').textContent = 'Invalid email';
+        valid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById('passError').textContent = 'Password must be 6+ characters';
+        valid = false;
+      }
+
+      if (valid) {
+        const user = { name, email, password };
+        users.push(user);
+
+        // Show success message
+        const successMsg = document.getElementById('successMsg');
+        successMsg.textContent = `Welcome ${name}! Registration complete.`;
+        successMsg.classList.remove('d-none');
+
+        // Reset form
+        form.reset();
+
+        // Print current array
+        console.log('Current Users Array:', users);
+      }
+    });
+  </script>
+</body>
+</html>
