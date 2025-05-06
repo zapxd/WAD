@@ -1,0 +1,16 @@
+open terminal
+
+-> npm create vite@latest
+
+give name to project todo
+framework - react
+varaint - javascrpt
+
+now replace the app.jsx and app.css and remove the entire code of index.css
+
+then run the below commands
+-> cd todo
+-> npm install
+-> npm run dev
+
+now go to links
