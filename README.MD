@@ -660,3 +660,150 @@ app.post('/submit', (req, res) => res.send('Form Submitted'));
     - HTTPS for data encryption.  
     - Input validation to prevent SQL injection/XSS.  
     - Authentication (OAuth/JWT) and role-based access control.  
+
+
+```
+# WAD Viva Questions & Answers (Units 3–6)
+
+---
+
+## Unit 3: Angular and React
+
+### 1. What is Angular?
+Angular is a TypeScript-based open-source web application framework developed by Google. It is used to build single-page applications using components, services, routing, and dependency injection.
+
+### 2. What are Angular Modules?
+Angular modules (`@NgModule`) are containers that group related components, services, directives, and pipes. The root module is usually `AppModule`.
+
+### 3. What are Angular Components?
+Components are the building blocks of Angular applications. Each component includes:
+- A class (logic)
+- A template (HTML)
+- Metadata (decorator)
+
+### 4. What are some key features of Angular?
+- Two-way data binding
+- Dependency Injection
+- Modular architecture
+- TypeScript support
+- Directives
+- Routing
+
+### 5. What is TypeScript?
+TypeScript is a superset of JavaScript developed by Microsoft. It adds static typing and OOP features to JavaScript and is the primary language used in Angular.
+
+### 6. Basic Angular CLI commands?
+- `ng new project-name` - Create a new Angular project
+- `ng serve` - Start development server
+- `ng generate component comp-name` - Create a new component
+
+---
+
+### 7. What is React?
+React is a JavaScript library developed by Facebook for building user interfaces. It uses components to create reusable UI elements.
+
+### 8. What are the features of React?
+- Virtual DOM
+- Component-based architecture
+- Unidirectional data flow
+- JSX (JavaScript + XML)
+- React Hooks
+
+### 9. Difference between Class and Functional Components?
+**Class Component**:
+- Uses ES6 classes
+- Can use lifecycle methods
+- `this` keyword is required
+
+**Functional Component**:
+- Uses functions
+- Can use Hooks
+- Simpler and more concise
+
+### 10. Common React Commands?
+- `npx create-react-app my-app` - Create a new React app
+- `npm start` - Start the React development server
+
+---
+
+## Unit 4: Node.js & Express
+
+### 11. What is Node.js?
+Node.js is a JavaScript runtime built on Chrome’s V8 engine. It allows JavaScript to run on the server side.
+
+### 12. Features of Node.js?
+- Non-blocking I/O
+- Event-driven architecture
+- Scalable and fast
+- NPM for package management
+
+### 13. What is NPM?
+Node Package Manager (NPM) is the default package manager for Node.js. It is used to install, share, and manage dependencies.
+
+### 14. What is Express.js?
+Express is a minimal and flexible Node.js web application framework. It provides tools to build web servers and APIs.
+
+### 15. How to create a basic HTTP server using Node.js?
+```js
+const http = require('http');
+http.createServer((req, res) => {
+  res.write("Hello World");
+  res.end();
+}).listen(3000);
+```
+
+### 16. What are HTTP methods?
+- GET – Retrieve data
+- POST – Submit data
+- PUT – Update data
+- DELETE – Delete data
+
+### 17. What is a Session?
+A session stores user data between HTTP requests on the server side. Useful for authentication.
+
+### 18. Basics of MongoDB?
+MongoDB is a NoSQL database that stores data in JSON-like documents. It is schema-less and highly scalable.
+
+### 19. CRUD operations in MongoDB?
+- Create: `db.collection.insertOne()`
+- Read: `db.collection.find()`
+- Update: `db.collection.updateOne()`
+- Delete: `db.collection.deleteOne()`
+
+---
+
+## Unit 5: jQuery Mobile
+
+### 20. What is jQuery Mobile?
+jQuery Mobile is a touch-optimized web framework for building responsive mobile websites and apps.
+
+### 21. Features of jQuery Mobile?
+- Responsive UI components
+- Built-in themes
+- AJAX-based navigation
+- Page transitions
+- Touch support
+
+### 22. What are Pages in jQuery Mobile?
+A page in jQuery Mobile is defined using `data-role="page"`. Multiple pages can be in a single HTML file.
+
+### 23. What are Transitions in jQuery Mobile?
+Transitions are animations used when navigating between pages. Examples: `slide`, `fade`, `pop`.
+
+### 24. What are Layouts and Widgets?
+Layouts define structure (like header, content, footer), and widgets are UI elements like buttons, dialogs, lists.
+
+### 25. What are Events in jQuery Mobile?
+jQuery Mobile supports touch and gesture events like `tap`, `swipe`, and page lifecycle events like `pagecreate`, `pageshow`.
+
+### 26. How are Forms handled in jQuery Mobile?
+Forms use standard HTML tags enhanced with data attributes. jQuery Mobile enhances their look and behavior on mobile.
+
+---
+
+## Unit 6: (Optional if present in syllabus)
+
+### 27. What is Mobile First Design?
+It is a design approach that prioritizes designing for smaller screens first, and then scales up for larger screens using media queries.
+
+```
