@@ -1,0 +1,8 @@
+open terminal in root directory and run the server 
+
+-> node server.js
+
+now go to all the routes
+http://localhost:3000/
+http://localhost:3000/home
+http://localhost:3000/fdfd (anything) just to visit the 404 route
